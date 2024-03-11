@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Price Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Car Price Predictor</h1>
+    <form id="car-price-form">
+        <label for="manufacturer">Manufacturer:</label>
+        <select id="manufacturer" name="manufacturer">
+            <option value="">Select Manufacturer</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="model">Model:</label>
+        <select id="model" name="model">
+            <option value="">Select Model</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="year">Year:</label>
+        <select id="year" name="year">
+            <option value="">Select Year</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+            <option value="">Select Category</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="interior">Interior:</label>
+        <select id="interior" name="interior">
+            <option value="">Select Interior</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="fuel-type">Fuel Type:</label>
+        <select id="fuel-type" name="fuel-type">
+            <option value="">Select Fuel Type</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="engine-volume">Engine Volume:</label>
+        <input type="text" id="engine-volume" name="engine-volume" placeholder="Engine Volume">
+
+        <label for="gear-box">Gear Box:</label>
+        <select id="gear-box" name="gear-box">
+            <option value="">Select Gear Box</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="drive-wheels">Drive Wheels:</label>
+        <select id="drive-wheels" name="drive-wheels">
+            <option value="">Select Drive Wheels</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="doors">Doors:</label>
+        <select id="doors" name="doors">
+            <option value="">Select Doors</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="color">Color:</label>
+        <select id="color" name="color">
+            <option value="">Select Color</option>
+            <!-- Options will be populated dynamically -->
+        </select>
+
+        <label for="mileage">Mileage:</label>
+        <input type="text" id="mileage" name="mileage" placeholder="Mileage">
+
+        <button type="submit">Predict Price</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

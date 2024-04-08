@@ -2,7 +2,7 @@ import pickle
 import json
 
 # Load the trained model from a .pkl file
-with open("car_price_predictor.pkl", "rb") as file:
+with open("car_price_preditictor.pkl", "rb") as file:
     model_dict = pickle.load(file)
 
 # Check what the loaded object contains

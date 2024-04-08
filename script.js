@@ -149,13 +149,26 @@ document.getElementById('car-price-form').addEventListener('submit', function (e
 
     //console.log('Data sent in POST request:', orderedSelections);
 
-    fetch('http://127.0.0.1:8000/predict', {
+    const requestDetails = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(selectionsIds)
-    })
-        .then(response => response.json())
-        .then(data => alert(`The predicted price for your car is: ${data.prediction}`))
+    };
+
+    // Log the request object
+    console.log('Fetch request details:', requestDetails);
+
+
+    fetch('http://127.0.0.1:8000/predict', requestDetails)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert(`The predicted price for your car is: ${data.prediction}`);
+        })
         .catch(error => {
             console.error('Error:', error);
             alert('Failed to get prediction.');

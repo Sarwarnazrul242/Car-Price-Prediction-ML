@@ -149,7 +149,7 @@ document.getElementById('car-price-form').addEventListener('submit', function (e
 
     //console.log('Data sent in POST request:', orderedSelections);
 
-    fetch('http://127.0.0.1:5500/predict', {
+    fetch('http://127.0.0.1:8000/predict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(selectionsIds)

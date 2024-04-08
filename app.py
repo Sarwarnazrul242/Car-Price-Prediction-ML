@@ -17,15 +17,17 @@ def predict():
     # Get the data from the request
     data = request.get_json(force=True)
 
+    # print(data)
+
     # Prepare the data for prediction
     # This part depends on your model's expected input format
     # For demonstration, let's assume the model expects a DataFrame
-    prediction_data = pd.DataFrame([data])
+    # prediction_data = pd.DataFrame([data])
 
     # Make prediction
-    prediction = model.predict(prediction_data)
-    return jsonify({"prediction": prediction[0]})  # Return the prediction
+    # prediction = model.predict(prediction_data)
+    return jsonify({"prediction : Got the data"})  # Return the prediction
 
 
 if __name__ == "__main__":
-    app.run(port=5500)
+    app.run(port=8000)

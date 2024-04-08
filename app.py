@@ -1,28 +1,31 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
+import pandas as pd
 import pickle
-import numpy as np
 
 app = Flask(__name__)
 
-# Load the model
-with open('car_price_predictor.pkl', 'rb') as file:
-    model = pickle.load(file)
+CORS(app)
 
-@app.route('/predict', methods=['POST'])
+# Load your trained model
+with open("car_price_preditictor.pkl", "rb") as model_file:
+    model = pickle.load(model_file)
+
+
+@app.route("/predict", methods=["POST"])
 def predict():
-    # Get the data from the POST request
+    # Get the data from the request
     data = request.get_json(force=True)
 
-    preprocessed_data = preprocess_data(data)
+    # Prepare the data for prediction
+    # This part depends on your model's expected input format
+    # For demonstration, let's assume the model expects a DataFrame
+    prediction_data = pd.DataFrame([data])
 
-    # Make the prediction
-    prediction = model.predict(preprocessed_data)
+    # Make prediction
+    prediction = model.predict(prediction_data)
+    return jsonify({"prediction": prediction[0]})  # Return the prediction
 
-    # Return the prediction as JSON
-    return jsonify({'prediction': prediction.tolist()})
 
-def preprocess_data(data):
-    return np.array(data)
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    app.run(port=5500)
